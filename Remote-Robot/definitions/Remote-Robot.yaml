@@ -1,0 +1,151 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Remote-Robot
+schemes:
+  - http
+basePath: /api
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  '/RobotContents/{id}':
+    get:
+      tags:
+        - RobotContent
+      summary: 'Find a model instance by {{id}}'
+      operationId: RobotContent.findOne
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/RobotContent'
+      deprecated: false
+    put:
+      tags:
+        - RobotContent
+      summary: Put attributes for a model instance and persist it
+      operationId: RobotContent.replace
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/RobotContent'
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/RobotContent'
+      deprecated: false
+    patch:
+      tags:
+        - RobotContent
+      summary: Patch attributes for a model instance and persist it
+      operationId: RobotContent.update
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/RobotContent'
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/RobotContent'
+      deprecated: false
+    delete:
+      tags:
+        - RobotContent
+      summary: 'Delete a model instance by {{id}}'
+      operationId: RobotContent.delete
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+  /RobotContents:
+    post:
+      tags:
+        - RobotContent
+      summary: Create a new instance of the model and persist it
+      operationId: RobotContent.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/RobotContent'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/RobotContent'
+      deprecated: false
+    get:
+      tags:
+        - RobotContent
+      summary: Find all instances of the model
+      operationId: RobotContent.findAll
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RobotContent'
+      deprecated: false
+    delete:
+      tags:
+        - RobotContent
+      summary: Delete all instances of the model
+      operationId: RobotContent.deleteAll
+      responses:
+        '200':
+          description: Request was successful
+      deprecated: false
+definitions:
+  RobotContent:
+    properties:
+      id:
+        type: string
+      text:
+        type: string
+      blinkColor:
+        type: string
+    additionalProperties: false
+    required:
+      - text
+      - blinkColor

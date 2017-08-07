@@ -1,0 +1,21 @@
+{
+  "name": "robotpi",
+  "version": "1.0.0",
+  "description": "a raspberry pi based robot",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Sanjeev Ghimire",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "line-in": "^0.1.2",
+    "mic": "^2.1.1",
+    "mqtt": "^2.9.2",
+    "speaker": "^0.3.0",
+    "watson-developer-cloud": "^2.34.0",
+    "wav": "^1.0.1",
+    "tjbot": "latest"
+  }
+}
